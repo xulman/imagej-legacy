@@ -130,7 +130,7 @@ public class DefaultLegacyOpener implements LegacyOpener {
 			// and those which are not allowed to do so (the default).
 			Object data = null;
 			try {
-				IOPlugin<?> io = getEagerHandler(path);
+				IOPlugin<?> io = path == null ? null : getEagerHandler(path);
 
 				if (io == null) {
 					logService.debug("No appropriate eager format found: " + path);
